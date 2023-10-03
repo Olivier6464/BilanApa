@@ -231,7 +231,7 @@ function affichage() {
 
   bil += rtl + spacer.box("Conseils donnés avant la PEC", egal);
   bil +=
-    rtl + rtl  + document.getElementById("conseil").value;
+    rtl + document.getElementById("conseil").value;
 
   const toCopy = document.getElementById("to-copy");
   toCopy.value = bil;
