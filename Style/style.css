@@ -14,7 +14,8 @@
   --main-option-bg-hover: hsla(103, 87%, 75%, 0.726);
   --main-option-color-hover: rgb(73, 48, 10);
   --main-temps-color: #50fa7b;
-  --main-date-color: #12d0e9;
+  --main-date-color: #12d0e9;      
+  --main-modale-color: #015388;
   --main-nav-li-color: rgb(237, 240, 226);
   --main-nav-a-color: rgb(230, 274, 240);
 }
@@ -451,7 +452,7 @@ ul.menu0 li{
 }
 
 #modal-header {
-  background-color: #40a019;
+  background-color: #015388;
   color: lavenderblush;
   text-align: center;
   font-family: Arvo;
