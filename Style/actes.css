@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Roboto+Mono:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Anonymous Pro', monospace;
+  font-weight: 500;
+}
+
+
+hr.stbleu {
+  height: 2px;
+  border: 1;
+  box-shadow: inset 0 4px 4px -1px rgba(197, 218, 163, 0.8);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  margin: 0 5%;
+  }
+
+h1 {
+  font-size: 1em;
+  color: white;
+  text-align: center;
+  
+}
+h2 {
+  font-size: 1.2em;
+  font-style: italic;
+  color: rgb(228, 168, 18);
+  text-align: center;
+  padding: 1em;
+}
+strong {
+  background-color: rgb(97, 61, 228);
+  padding: 0 10px;
+}
+
+body {
+  background-color: rgb(35, 38, 43);
+}
+
+a {
+  color: rgb(82, 170, 247);
+  text-decoration: none;
+}
+
+li {
+  color: rgb(240, 233, 222);
+  font-size: 1em;
+  background-color: rgb(35, 38, 43);
+  margin-top: 0;
+  margin-bottom: 3px;
+}
+
+li:hover {
+  /* border: 1px solid rgb(207, 95, 30); */
+  cursor: pointer;
+  background-color: rgb(15, 53, 158);
+ 
+
+}
+
+ul {
+  margin-bottom: 1em;
+}
+
+
+em {
+  color: yellow;
+}
+
+.copied {
+  color: rgb(228, 168, 18);
+}
+
+.member {
+  background-color: rgb(68, 67, 5);
+  color:rgb(240, 243, 56)
+}
+
+.separate{
+  margin-bottom: 10px;
+}

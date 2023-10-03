@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html id="fen" lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="Style/style.css" />
+    <link rel="icon" href="favicon.ico" />
+    <script type="text/javascript" defer src="JS/app.js"></script>
+
+    <title>bilan ES</title>
+  </head>
+
+  <body>
+    <div id="top"></div>
+
+    <nav class="nav" role="navigation">
+      <ul class="menu">
+        <li>
+          <ul class="menu0">
+            <li id="temps"></li>
+            <li id="laDate"></li>
+          </ul>
+        </li>
+
+        <!-- <li class="has-children"><a href="#">Catégories</a> -->
+        <!-- sous menu-->
+        <!-- <ul class="sous-menu">
+          <li><a href="#">Item 1</a></li>
+          <li><a href="#">Item 2</a></li>
+          <li class="has-children"><a href="#">Item 3</a> -->
+        <!-- un sous menu dans un sous-menu-->
+        <!-- <ul class="sous-menu">
+              <li><a href="#">Item 1</a></li>
+              <li><a href="#">Item 2</a></li>
+              <li><a href="#">Item 3</a></li>
+              <li><a href="#">Item 4</a></li>
+            </ul> -->
+        <!-- /un sous menu dans un sous-menu-->
+        <!-- </li>
+          <li><a href="#">Item 4</a></li>
+        </ul>
+
+      </li> -->
+        <!-- /sous menu-->
+        <li id="copier" onclick="affichage()">Copier</li>
+        <!-- on affiche les numeros internes -->
+     
+        <li>
+          <ul class="menu2">
+            <li>
+              <a href="#top"
+                ><span class="material-icons"> arrow_upward </span></a
+              >
+            </li>
+            <li>
+              <a href="#bas_de_page"
+                ><span class="material-icons"> arrow_downward </span></a
+              >
+            </li>
+            <li id="reinitialise">
+              <span class="material-icons"> refresh </span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <br /><br /><br /><br /><br /><br />
+    <form>
+      <div>
+        <fieldset>
+          <br /><br />
+          <legend align="center">
+            <span class="donnees rubrique"><span>Bilan ES</span></span>
+          </legend>
+          <br /><br />
+
+          <div class="container-0">
+            <div class="container-1">
+              <div>
+                <label class="donnees lbl-chambre" for="chambre"
+                  ><span>Chambre</span></label
+                >
+              </div>
+              <div>
+                <input
+                  id="chambre"
+                  class="majuscule input-chambre"
+                  name="nom"
+                  type="text"
+                  pattern="[0-9]{3}"
+                  cols="3"
+                  display="inline"
+                  maxlength="3"
+                  autofocus
+                />
+              </div>
+            </div>
+            <div class="container-1">
+              <div>
+                <label class="donnees lbl-side" for="side"
+                  ><span>Porte/Fenêtre</span></label
+                >
+              </div>
+              <div>
+                <input
+                  id="cote"
+                  class="majuscule input-side"
+                  name="nom"
+                  type="text"
+                  cols="1"
+                  pattern="[pPfF]{1}"
+                  display="inline"
+                  maxlength="1"
+                />
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="container-1">
+            <div>
+              <label class="donnees lbl-entry" for="entrée"
+                ><span><i class="fa fa-calendar">Entré(e) le:</i> </span></label
+              >
+            </div>
+            <div>
+              <input
+                type="date"
+                id="entree"
+                name="entree"
+                class="date input-entry"
+                required="true"
+                size="18"
+              />
+            </div>
+            <div>
+              <div class="plusmoins plus1j">+1 jour</div>
+            </div>
+            <div>
+              <div class="plusmoins moins1j">- 1 jour</div>
+            </div>
+          </div>
+          <br />
+          <label class="donnees" for="civilite"><span>Civilité</span></label>
+          <br />
+          <select id="civilite" name="civilite">
+            <option value="Madame" selected="selected">Madame</option>
+            <option value="Monsieur">Monsieur</option>
+          </select>
+          <br /><br /><label class="donnees" for="nom"><span>Nom</span></label>
+          <br />
+          <input
+            id="nom"
+            class="majuscule"
+            name="nom"
+            type="text"
+            required="true"
+            size="15"
+            maxlength="30"
+          /><br /><br /><label class="donnees" for="prenom"
+            ><span>Prénom</span></label
+          >
+          <br />
+          <input
+            id="prenom"
+            class="majuscule"
+            name="prenom"
+            type="text"
+            required="true"
+            size="15"
+            maxlength="30"
+          /><br /><br />
+
+          <!-- <label class="donnees" for="entrée"><span>Date d'entrée</span></label><input type="date"
+        id="entree" name="entree" class="date" required="true" size="18" /><br /><br /> -->
+
+          <br /><br />
+
+          <label class="donnees" onclick="rmuglyspaces('motifadmission')">
+            <span>Motif d'admission</span> </label
+          ><br />
+
+          <textarea
+            class="champ"
+            id="motifadmission"
+            name="motifadmission"
+            rows="5"
+            cols="80"
+          ></textarea>
+
+          <br /><br />
+
+          <label class="donnees" onclick="rmuglyspaces('atcdfr')">
+            <span>ATCD/FR</span> </label
+          ><br />
+          <textarea
+            class="champ"
+            id="atcdfr"
+            name="atcdfr"
+            rows="5"
+            cols="80"
+          ></textarea>
+          <br /><br />
+
+
+          <label class="donnees" onclick="rmuglyspaces('anamnese')">
+            <span>Anamnèse</span> </label
+          ><br />
+          <textarea id="anamnese" name="anamnese" rows="5" cols="80"></textarea>
+          <br /><br />
+
+          <label class="donnees" onclick="rmuglyspaces('profession')">
+            <span>Profession</span> </label
+          ><br />
+          <textarea
+            id="profession"
+            name="profession"
+            rows="5"
+            cols="80"
+          ></textarea>
+          <br /><br />
+            <label class="fonctionnel" onclick="rmuglyspaces('escaliers')"
+            ><span>Escaliers</span> </label
+          ><br />
+          <textarea name="escaliers" id="escaliers" rows="3" cols="80"></textarea>
+          <select id="phescaliers" onchange="replaceSelection('escaliers',this.id)">
+            <option value="">phrases</option>
+            <option value="escaliers1">
+              escaliers1
+            </option>
+            <option value="escaliers2">escaliers2</option>
+          </select>
+          <br /><br />
+      
+          <label class="donnees" onclick="rmuglyspaces('hobbies')">
+            <span>Loisirs et hobbies, personne sédentaire ou active</span> </label
+          ><br />
+          <textarea id="hobbies" name="hobbies" rows="5" cols="80"></textarea>
+ 
+          <select id="phhobbies" onchange="replaceSelection('hobbies',this.id)">
+            <option value="">phrases</option>
+            <option value="hobbie1">
+              hobbie1
+            </option>
+            <option value="hobbie2">hobbie2</option>
+          </select>
+          <br /><br />
+          
+        <fieldset>
+          <legend class="dolor rubrique" align="center">
+            <span>Cotation de la douleur EVS</span>
+          </legend>
+          <br /><br />
+
+          <label class="dolor" for="auRepos"><span>Au Repos</span></label
+          ><br /><select id="douleurRepos" name="douleurRepos">
+            <option value="0" selected="selected">pas de douleur</option>
+            <option value="1">faible</option>
+            <option value="2">moyenne</option>
+            <option value="3">forte</option>
+            <option value="4">très forte</option>
+          </select>
+          <br /><br /><label class="dolor" for="aLaMobilisation"
+            ><span>A la mobilisation</span></label
+          ><select id="douleurMob" name="douleurMob">
+            <option value="0" selected="selected">pas de douleur</option>
+            <option value="1">faible</option>
+            <option value="2">moyenne</option>
+            <option value="3">forte</option>
+            <option value="4">très forte</option></select
+          ><br /><br /><label class="dolor" for="caracteristique"
+            ><span>Caractéristiques</span></label
+          >
+
+          <select multiple id="typeDouleur" name="typeDouleur">
+            <option value=""></option>
+            <option value="mécanique">mécanique</option>
+            <option value="inflammatoire">inflammatoire</option>
+            <option value="paresthésique">paresthésique</option>
+            <option value="élancements">élancements</option>
+            <option value="fourmillements">fourmillements</option>
+            <option value="picotements">picotements</option>
+            <option value="brulûres">brulûres</option>
+            <option value="décharges électriques">décharges électriques</option>
+            <option value="pénétrante">pénétrante</option>
+            <option value="lancinante">lancinante</option>
+            <option value="coups de poignard">coups de poignard</option>
+            <option value="en étau">en étau</option>
+            <option value="tiraillement">tiraillement</option>
+          </select>
+          <br /><br />
+          <label class="dolor" for="localisation"
+            ><span>Localisation</span></label
+          >
+          <input id="localisation" name="localisation" type="text" /><br />
+        </fieldset>
+        <br /><br />
+                  <br /><br />
+        
+          <label class="fonctionnel"
+            ><span>Fatigue: Fatigabilité, forme physique</span></label
+          >
+
+          <textarea id="fatigue" name="fatigue" rows="2" cols="80"></textarea>
+          <select
+            open
+            id="phrfatigue"
+            onchange="replaceSelection('fatigue',this.id)" 
+            ;
+            onfocus="this.selectedIndex= 0;"
+          >
+            <option value="">phrases</option>
+            <option
+              value="fatigue1"
+            >
+              fatigue1
+            </option>
+            <option
+              value="fatigue2"
+            >fatigue2</option>
+          </select>
+        </fieldset>
+        <br /><br />
+        
+        <fieldset>
+          <legend align="center">
+            <span class="respicogito rubrique"><span>Respiratoire</span></span>
+          </legend>
+          <br /><br />
+          <label class="respicogito">
+            <span>Dyspnée</span>
+          </label>
+          <textarea id="fonctionsRespiratoires" rows="4" cols="120"></textarea>
+          <select
+            id="phrfonctionsRespiratoires"
+            onchange="replaceSelection('fonctionsRespiratoires',this.id)"
+          >
+            <option value="">phrases</option>
+            <option value="Sous O2 en chambre à ">O2 en chambre</option>
+            <option value="SatO2/pouls au repos = ">SatO2/pouls =</option>
+            <option
+              value="Dyspnée: stade V essoufflé au repos (Sadoul
+et Polu). "
+            >
+              dyspnée au repos
+            </option>
+            <option
+              value="Dyspnée: stade IV essoufflé à la marche lente (Sadoul et Polu). "
+            >
+              dyspnée à la marche lente
+            </option>
+            <option
+              value="Dyspnée: stade III essoufflé à la marche normale en terrain plat (Sadoul et Polu). "
+            >
+              dyspnée à la marche normale
+            </option>
+            <option
+              value="Dyspnée: stade II essoufflé au 1er étage ou à la marche rapide ou en pente (Sadoul et Polu). "
+            >
+              dyspnée à la marche rapide
+            </option>
+            <option
+              value="Dyspnée: stade I essoufflé pour des efforts importants ou au-delà du 2eme étage (Sadoul et Polu). "
+            >
+              dyspnée à l'effort
+            </option>
+            <option value="Expectoration: crachats muqueux. ">
+              blanc ou translucide
+            </option>
+            <option value="Expectoration: crachats purulents. ">
+              jaune ou verdâtre
+            </option>
+            <option
+              value="Expectoration: crachats
+muco-purulents. "
+            >
+              blanc avec stries jaunâtres
+            </option>
+            <option value="Expectoration: crachats hémoptoïques. ">
+              blanc avec des stries rouges
+            </option>
+            <option value="Expectoration: crachats hémorragiques. ">
+              rouges
+            </option>
+          </select>
+        </fieldset>
+        <br /><br />
+
+        <fieldset>
+        
+          <label class="respicogito">
+            <span>Prescription médicale</span>
+          </label>
+          <textarea id="prescription" rows="4" cols="80"></textarea>
+          <select
+            id="phprescription"
+            onchange="replaceSelection('prescription',this.id)"
+          >
+            <option value="">phrases</option>
+            <option value="Prescription1">
+              Prescription1
+            </option>
+            <option value="Prescription2">
+              Prescription2
+            </option>
+          </select>
+        </fieldset>
+        <br /><br />
+
+        <fieldset>
+          <legend align="center">
+            <span class="articulaire rubrique"><span>réadaptation</span></span>
+          </legend>
+          <br /><br />
+
+          <label class="donnees">
+            <span>Objectifs du patient</span>
+          </label>
+          <textarea
+            name="projetKine"
+            id="projetKine"
+            rows="3"
+            cols="80"
+          ></textarea>
+          <select
+            id="phrprojetkine"
+            onchange="replaceSelection('projetKine',this.id)"
+          >
+            <option value="">phrases</option>
+            <option value="retrouver une marche fonctionnelle.">
+              retrouver une marche fonctionnelle.
+            </option>
+            <option value="souhaite améliorer son périmètre de marche.">
+              améliorer périmètre de marche
+            </option>
+            <option value="retour à domicile.">RAD</option>
+            <option value="retour à la maison de retraite">
+              retour à la maison de retraite
+            </option>
+            <option value="retour à la résidence sénior">
+              retour à la résidence sénior
+            </option>
+          </select>
+        </fieldset>
+        <fieldset>
+          ><br /><br />
+          <label class="fonctionnel"><span>Conseils donnés avant la prise en charge</span></label>
+          <textarea
+            id="conseil"
+            name="conseil"
+            rows="2"
+            cols="80"
+          ></textarea>
+          <select
+            open
+            id="phconseil"
+            onchange="replaceSelection('conseil',this.id)"
+            ;
+            onfocus="this.selectedIndex= 0;"
+          >
+            <option value="">conseils</option>
+            <option value="conseil1">conseil1
+            </option>
+            <option value="conseil2">conseil2
+            </option>
+          </select>
+          <br /><br />
+
+
+
+        <fieldset>
+          <legend align="center">
+            <span class="articulaire rubrique"><span>Test et évaluation</span></span>
+          </legend>
+          <br />
+
+          <label class="articulaire">
+            <span>Tests et évaluations selon la prise en charge </span>
+          </label>
+          <textarea
+            id="amplitude"
+            name="amplitude"
+            rows="4"
+            cols="80"
+          ></textarea>
+          <select
+            id="phramplitude"
+            onchange="replaceSelection('amplitude',this.id)"
+          >
+            <option value="">Tests</option>
+            <option value="- Start Up and go">
+                - Start Up and go
+            </option>
+            <option value="Sit to stand">
+                - Sit to stand
+            </option>
+            <option value="- TINETTI">
+            </option>
+              - TINETTI
+            <option value="- Test de marche de 6 minutes">
+                - Test de marche de 6 minutes
+            </option>
+            <option value="- Evaluation des risques de chutes">
+                - Evaluation des risques de chutes
+            </option>
+          </select>
+
+          <br /><br />
+
+        <!--     pour copier du text dans le clipboqrd-->
+        <div class="modal" id="modal">
+          <div id="modal-content">
+            <div id="modal-close" data-dismiss="dialog">X</div>
+            <div id="modal-header">
+              <p>Bilan MK</p>
+            </div>
+            <textarea
+              class="modal-body"
+              id="to-copy"
+              rows="30"
+              cols="80"
+            ></textarea>
+            <div id="modal-footer" class="modal-btns">
+              <!-- <a href="#" class="btn btn-copy" role="button">Copier</a> -->
+              <a
+                href="#"
+                class="btn btn-close"
+                role="button"
+                data-dismiss="dialog"
+                >Fermer</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
