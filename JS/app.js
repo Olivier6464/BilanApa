@@ -186,7 +186,7 @@ function affichage() {
   bil +=
     rtl +
     spacer.box(
-      "Fatigabilité, forme physique",
+      " Fatigabilité, forme physique",
       egal
     ) +
     rtl +
@@ -213,25 +213,21 @@ function affichage() {
   bil +=
     rtl +
     spacer.box(
-      "Objectifs et attentes du patient",
-      egal
-    ) +
-    rtl +
-    document.getElementById("projetKine").value;
-  bil = rmNastyChars(bil);
-  bil +=
-    rtl +
-    spacer.box(
-      "Objectifs et attentes du patient",
+      " Objectifs et attentes du patient",
       egal
     ) +
     rtl +
     document.getElementById("projetKine").value;
   bil = rmNastyChars(bil);
 
-  bil += rtl + spacer.box("Conseils donnés avant la PEC", egal);
+  bil += rtl + spacer.box(" Conseils donnés avant la PEC", egal);
   bil +=
     rtl + document.getElementById("conseil").value;
+
+ bil += rtl + spacer.box(" tests et évaluations selon la PEC", egal);
+  bil +=
+    rtl + document.getElementById("tests").value; 
+
 
   const toCopy = document.getElementById("to-copy");
   toCopy.value = bil;
