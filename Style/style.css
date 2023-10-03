@@ -1,14 +1,9 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap"); */
 
 :root {
-  /* --main-bg-color: #5cad3c; */
-  /* --main-bg-color: #C3E8CB; */
   --main-bg-color: #102a43;
-  /* --main-bg-color: #1F242F;  */
-  /* --main-bg-color: #d3e9cb; */
-  /* --main-bg-color: rgb(180, 214, 171); */
-  /* --main-lb-color: #faeda1fa; */
-  --main-lb-color: #ffc600;
+   /* --main-lb-color: #026efd;  */
+   --main-lb-color: #73D598; 
   --main-a-color: black;
   --main-menu-hover: rgb(238, 252, 180);
   --main-option-bg-hover: hsla(103, 87%, 75%, 0.726);
@@ -24,7 +19,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 html {
@@ -56,14 +51,11 @@ li:hover {
   font-weight: 800;
 }
 
-h1 {
-  background-color: var(--main-h1-bg-color);
-}
 
 label {
   font-family: "Arvo";
   /* text-transform: uppercase; */
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   letter-spacing: 0.05em;
   /* font-style: oblique; */
   font-weight: 600;
@@ -78,9 +70,10 @@ label {
 }
 
 label > span {
-  color: rgb(18, 19, 34);
+  /* color: rgb(18, 19, 34); */
+  color: #111551;
   padding: 0px;
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-variant: small-caps;
 }
 
@@ -217,7 +210,12 @@ ul.menu0 li{
 .menu2 li:hover span{
   color:rgba(17, 214, 83, 0.938)
 }
-
+.titre{
+  font-family: sans-serif, Helvetica, arial;
+  color: #FFD41A;
+  font-size: 4.3rem;
+  text-style: italic;
+}
 .container-1 {
   margin-left: 10%;
   display: flex;
@@ -336,7 +334,7 @@ ul.menu0 li{
 
 .articulaire {
   padding: 1px 17px 8px 17px;
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px 5évaluationpx 0 0;
   background-color: var(--main-lb-color);
 }
 
@@ -364,6 +362,7 @@ ul.menu0 li{
   border-radius: 5px;
   padding: 8px;
   /* margin-right: 3em; */
+  color: darkblue;
   background-color: var(--main-lb-color);
   font-weight: bold;
 }
@@ -386,17 +385,17 @@ ul.menu0 li{
 }
 
 .rubrique {
-  /* color: #223083; */
+   color: #ffdc28;
   /* color: rgba(65, 61, 71, 0.75);*/
-  color: rgb(240, 215, 71);
-  /* background-color: #26640a; */
-  background-color: #50f;
+  background-color: rgba(10,10,10,0.3);
+  border: 4px solid lightgreen;
+  /* background-color: #50f; */
   font-family: "Times New Roman", Times, serif;
   font-variant: small-caps;
   /* color:	#D5AD6D; */
   font-family: "Arvo";
   font-weight: 300;
-  font-size: 1.6rem;
+  font-size: 3.2rem;
   /* color: rgb(80, 61, 13); */
   font-weight: bold;
   letter-spacing: 0.07em;
